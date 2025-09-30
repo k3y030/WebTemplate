@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template3</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V750H9YH5N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V750H9YH5N');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: #fff;
+            color: #000;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, #FF6B6B, #FFD93D, #6BCF7F, #4ECDC4, #A8E6CF);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+        
+        .logo-bounce {
+            width: 140px;
+            height: 140px;
+            animation: bounce 2s infinite;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 5px 5px 0 #000, 
+                         -2px -2px 0 #000,  
+                         2px -2px 0 #000,
+                         -2px 2px 0 #000,
+                         2px 2px 0 #000;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+        
+        .hero .tagline {
+            font-size: 28px;
+            font-weight: 900;
+            color: #000;
+            background: #FFD93D;
+            padding: 15px 40px;
+            display: inline-block;
+            transform: rotate(-2deg);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+        
+        .cta-mega {
+            display: inline-block;
+            background: #FF6B6B;
+            color: #fff;
+            padding: 25px 60px;
+            font-size: 32px;
+            font-weight: 900;
+            text-decoration: none;
+            border: 6px solid #000;
+            box-shadow: 10px 10px 0 #000;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .cta-mega:hover {
+            transform: translate(5px, 5px);
+            box-shadow: 5px 5px 0 #000;
+        }
+        
+        /* Floating Shapes */
+        .shape {
+            position: absolute;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: #FF6B6B;
+            top: 10%;
+            left: 10%;
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            background: #4ECDC4;
+            top: 70%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: #FFD93D;
+            bottom: 10%;
+            left: 20%;
+            border-radius: 50%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-40px) rotate(180deg); }
+        }
+        
+        /* Stats Banner */
+        .stats-banner {
+            background: #000;
+            color: #FFD93D;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .stat-box {
+            padding: 20px;
+            border: 4px dashed #FFD93D;
+        }
+        
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            color: #FFD93D;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 10px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #000;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 8px;
+            background: linear-gradient(90deg, #FF6B6B, #FFD93D, #4ECDC4);
+        }
+        
+        /* Vehicle Cards */
+        .vehicles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .vehicle-card {
+            background: #fff;
+            border: 6px solid #000;
+            box-shadow: 15px 15px 0 #000;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .vehicle-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 20px 20px 0 #000;
+        }
+        
+        .vehicle-card:nth-child(1) { border-color: #FF6B6B; }
+        .vehicle-card:nth-child(2) { border-color: #4ECDC4; }
+        .vehicle-card:nth-child(3) { border-color: #FFD93D; }
+        
+        .vehicle-img-wrapper {
+            height: 250px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        
+        .vehicle-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .vehicle-card:hover .vehicle-img {
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        .vehicle-content {
+            padding: 30px;
+        }
+        
+        .vehicle-name {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .vehicle-card:nth-child(1) .vehicle-name { color: #FF6B6B; }
+        .vehicle-card:nth-child(2) .vehicle-name { color: #4ECDC4; }
+        .vehicle-card:nth-child(3) .vehicle-name { color: #FFD93D; }
+        
+        .price-tag {
+            background: #000;
+            color: #FFD93D;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            margin: 20px 0;
+            transform: rotate(-1deg);
+        }
+        
+        .monthly-box {
+            background: #FFD93D;
+            border: 4px solid #000;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .monthly-box .label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+        }
+        
+        .monthly-box .amount {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin-top: 5px;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .features-list li {
+            padding: 10px 0;
+            font-weight: 700;
+            border-bottom: 2px dashed #ddd;
+        }
+        
+        .features-list li::before {
+            content: '★';
+            color: #FFD93D;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        .btn-card {
+            width: 100%;
+            padding: 18px;
+            background: #000;
+            color: #FFD93D;
+            border: none;
+            font-size: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-card:hover {
+            background: #FFD93D;
+            color: #000;
+        }
+        
+        /* Rebate Section */
+        .rebate-section {
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .rebate-section::before {
+            content: '🎉';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .rebate-title {
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            color: #fff;
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+        
+        .rebate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .rebate-card {
+            background: #fff;
+            border: 6px solid #000;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .rebate-card:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+        
+        .rebate-card.hot::before {
+            content: 'HOT!';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #FF6B6B;
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: 900;
+            border: 4px solid #000;
+            transform: rotate(12deg);
+            font-size: 18px;
+        }
+        
+        .rebate-model {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .rebate-amount {
+            font-size: 48px;
+            font-weight: 900;
+            color: #FF6B6B;
+            margin-bottom: 10px;
+        }
+        
+        /* Calculator */
+        .calculator-section {
+            background: #FFD93D;
+            padding: 80px 20px;
+        }
+        
+        .calc-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border: 8px solid #000;
+            padding: 40px;
+            box-shadow: 20px 20px 0 rgba(0,0,0,0.2);
+        }
+        
+        .calc-title {
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .calc-group {
+            margin-bottom: 25px;
+        }
+        
+        .calc-group label {
+            display: block;
+            font-weight: 900;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        
+        .calc-group input {
+            width: 100%;
+            padding: 15px;
+            border: 4px solid #000;
+            font-size: 18px;
+            font-weight: 700;
+            background: #fff;
+        }
+        
+        .calc-group input:focus {
+            outline: none;
+            background: #FFD93D;
+        }
+        
+        .calc-btn {
+            width: 100%;
+            padding: 20px;
+            background: #FF6B6B;
+            color: #fff;
+            border: 4px solid #000;
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 6px 6px 0 #000;
+        }
+        
+        .calc-btn:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0 #000;
+        }
+        
+        .calc-result {
+            margin-top: 30px;
+            padding: 30px;
+            background: #4ECDC4;
+            border: 4px solid #000;
+            text-align: center;
+            display: none;
+        }
+        
+        .result-label {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .result-amount {
+            font-size: 48px;
+            font-weight: 900;
+            color: #000;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: #fff;
+            padding: 80px 20px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        
+        .testimonial-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 6px solid #000;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-img:hover {
+            transform: rotate(-3deg) scale(1.05);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 20px 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #FFD93D;
+            text-transform: uppercase;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            padding: 8px 0;
+            font-weight: 700;
+        }
+        
+        .consultant-box {
+            background: #FFD93D;
+            color: #000;
+            border: 6px solid #fff;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .consultant-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 6px solid #000;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        
+        .consultant-name {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .consultant-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            border-top: 4px dashed #FFD93D;
+            font-weight: 700;
+        }
+        
+        /* Sticky WhatsApp */
+        .sticky-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: wiggle 1s ease infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-15deg); }
+            75% { transform: rotate(15deg); }
+        }
+        
+        .sticky-wa a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border: 5px solid #000;
+            border-radius: 50%;
+            font-size: 36px;
+            text-decoration: none;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-wa a:hover {
+            transform: scale(1.2) rotate(15deg);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero .tagline {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+            
+            .cta-mega {
+                font-size: 22px;
+                padding: 18px 40px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .vehicles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        
+        <div class="hero-content">
+            <img src="proton.png" alt="Proton Logo" class="logo-bounce">
+            <h1>POWER UP YOUR DRIVE!</h1>
+            <p class="tagline">REBAT GILA-GILA HINGGA RM10,000!</p>
+            <a href="" class="cta-mega">
+                WHATSAPP NOW!
+            </a>
+        </div>
+    </section>
+    
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Happy Buyers</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">RM10K</div>
+                <div class="stat-label">Max Rebate</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Loan Pass!</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vehicles Section -->
+    <section class="container">
+        <h2 class="section-title">HOT MODELS 2025</h2>
+        
+        <div class="vehicles-grid">
+            <!-- X50 -->
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper">
+                    <img src="x50-mainbg.jpg" alt="X50" class="vehicle-img">
+                </div>
+                <div class="vehicle-content">
+                    <h3 class="vehicle-name">PROTON X50</h3>
+                    <div class="price-tag">RM 92,618 - RM 116,698</div>
+                    <div class="monthly-box">
+                        <div class="label">Monthly From</div>
+                        <div class="amount">RM 944</div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Rebate RM4K - RM10K</li>
+                        <li>Turbo Power!</li>
+                        <li>Safety Features</li>
+                    </ul>
+                    <button class="btn-card">VIEW DETAILS</button>
+                </div>
+            </div>
+            
+            <!-- X70 -->
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper">
+                    <img src="x70-mainbg.jpg" alt="X70" class="vehicle-img">
+                </div>
+                <div class="vehicle-content">
+                    <h3 class="vehicle-name">PROTON X70</h3>
+                    <div class="price-tag">RM 101,850 - RM 130,593</div>
+                    <div class="monthly-box">
+                        <div class="label">Monthly From</div>
+                        <div class="amount">RM 1,039</div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Rebate RM10K!</li>
+                        <li>7-Seater SUV</li>
+                        <li>Premium Quality</li>
+                    </ul>
+                    <button class="btn-card">VIEW DETAILS</button>
+                </div>
+            </div>
+            
+            <!-- S70 -->
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper">
+                    <img src="s70-mainbg.jpg" alt="S70" class="vehicle-img">
+                </div>
+                <div class="vehicle-content">
+                    <h3 class="vehicle-name">PROTON S70</h3>
+                    <div class="price-tag">RM 76,146 - RM 97,724</div>
+                    <div class="monthly-box">
+                        <div class="label">Monthly From</div>
+                        <div class="amount">RM 777</div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Rebate RM4K - RM6K</li>
+                        <li>Latest Tech</li>
+                        <li>Spacious Sedan</li>
+                    </ul>
+                    <button class="btn-card">VIEW DETAILS</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Rebate Section -->
+    <section class="rebate-section">
+        <h2 class="rebate-title">CRAZY REBATES!</h2>
+        
+        <div class="rebate-grid">
+            <div class="rebate-card hot">
+                <div class="rebate-model">X50 RC FLAGSHIP</div>
+                <div class="rebate-amount">RM 10,000</div>
+                <p>Maximum Rebate!</p>
+            </div>
+            
+            <div class="rebate-card hot">
+                <div class="rebate-model">X70</div>
+                <div class="rebate-amount">RM 10,000</div>
+                <p>Maximum Rebate!</p>
+            </div>
+            
+            <div class="rebate-card">
+                <div class="rebate-model">S70</div>
+                <div class="rebate-amount">RM 4K-6K</div>
+                <p>Depends on Variant</p>
+            </div>
+            
+            <div class="rebate-card">
+                <div class="rebate-model">X50 FL</div>
+                <div class="rebate-amount">RM 4,000</div>
+                <p>Available Now!</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calculator -->
+    <section class="calculator-section">
+        <div class="calc-container">
+            <h3 class="calc-title">Calculate Your Monthly!</h3>
+            
+            <div class="calc-group">
+                <label>Loan Amount (RM)</label>
+                <input type="number" id="loanAmount" placeholder="60000">
+            </div>
+            
+            <div class="calc-group">
+                <label>Years</label>
+                <input type="number" id="loanYears" placeholder="9">
+            </div>
+            
+            <div class="calc-group">
+                <label>Interest Rate (%)</label>
+                <input type="number" step="0.01" id="interestRate" placeholder="2.9">
+            </div>
+            
+            <button class="calc-btn" onclick="calculateLoan()">CALCULATE NOW!</button>
+            
+            <div id="result" class="calc-result">
+                <div class="result-label">Your Monthly Payment:</div>
+                <div class="result-amount" id="monthlyPayment">-</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">Happy Customers!</h2>
+        
+        <div class="testimonial-grid">
+            <img src="test1.jpg" alt="Customer 1" class="testimonial-img">
+            <img src="test2.jpg" alt="Customer 2" class="testimonial-img">
+            <img src="test3.jpg" alt="Customer 3" class="testimonial-img">
+            <img src="test4.jpg" alt="Customer 4" class="testimonial-img">
+            <img src="test5.jpg" alt="Customer 5" class="testimonial-img">
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Who Can Apply?</h3>
+                <ul>
+                    <li>✓ Government</li>
+                    <li>✓ Private</li>
+                    <li>✓ Factory</li>
+                    <li>✓ Pension</li>
+                    <li>✓ Student</li>
+                    <li>✓ Graduate Scheme</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Documents Needed</h3>
+                <ul>
+                    <li>IC & License</li>
+                    <li>Payslip (3-6 months)</li>
+                    <li>Bank Statement</li>
+                    <li>SSM (Business)</li>
+                </ul>
+            </div>
+            
+            <div class="consultant-box">
+                <img src="Pic1.jpg" alt="Consultant" class="consultant-img">
+                <div class="consultant-name">[Nama Sellers]</div>
+                <div class="consultant-title">Proton Sales Pro</div>
+                <a href="" class="cta-mega" style="font-size: 18px; padding: 15px 30px;">
+                    CONTACT ME!
+                </a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 [Nama Sellers] | Proton Sales Consultant</p>
+            <p style="margin-top: 10px;">Updated: 30 Sept 2025</p>
+        </div>
+    </footer>
+    
+    <!-- Sticky WhatsApp -->
+    <div class="sticky-wa">
+        <a href="">
+            📱
+        </a>
+
+  </div>
+    
+    <script>
+    function calculateLoan() {
+        const loan = parseFloat(document.getElementById('loanAmount').value);
+        const years = parseFloat(document.getElementById('loanYears').value);
+        const interest = parseFloat(document.getElementById('interestRate').value);
+        
+        if (!loan || !years || !interest) {
+            alert('Please fill all fields!');
+            return;
+        }
+        
+        const interestDecimal = interest / 100;
+        const monthlyPayment = (loan * years * interestDecimal + loan) / 108;
+        
+        document.getElementById('monthlyPayment').textContent = 'RM ' + monthlyPayment.toFixed(2);
+        document.getElementById('result').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
