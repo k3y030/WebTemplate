@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Template Website</title>
   <style>
-    /* Body full height & flex column supaya footer boleh auto bottom */
-    html, body {
-      height: 100%;
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
       background: #f4f4f4;
       display: flex;
       flex-direction: column;
+      min-height: 100vh; /* pastikan footer sentiasa di bawah */
     }
 
     header {
@@ -39,8 +41,9 @@
       gap: 20px;
       padding: 30px;
       max-width: 1000px;
+      width: 100%;
       margin: auto;
-      flex: 1; /* ambil ruang yang tinggal supaya footer ke bawah */
+      flex-grow: 1; /* ambil ruang untuk footer bottom */
     }
 
     .card {
@@ -84,12 +87,35 @@
     }
 
     footer {
-      text-align: center; /* center teks */
+      text-align: center;
       padding: 20px;
       background: #eee;
       font-size: 14px;
       color: #555;
-      margin-top: auto; /* tarik footer ke bawah */
+    }
+
+    /* Media Queries untuk mobile */
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr; /* semua cards satu column */
+        padding: 20px;
+      }
+      header {
+        padding: 20px 10px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      header p {
+        font-size: 14px;
+      }
+      .card img {
+        height: 120px;
+      }
+      .card a {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -101,24 +127,24 @@
 
   <div class="container">
     <div class="card">
-      <img src="temp1.JPG" alt="Template 1">
+      <img src="temp1.jpg" alt="Template 1">
       <h3>Template 1</h3>
       <a href="template1.html" target="_blank" rel="noopener noreferrer">Lihat Template</a>
     </div>
     <div class="card">
-      <img src="temp2.JPG" alt="Template 2">
+      <img src="temp2.jpg" alt="Template 2">
       <h3>Template 2</h3>
       <a href="template2.html" target="_blank" rel="noopener noreferrer">Lihat Template</a>
     </div>
     <div class="card">
-      <img src="temp3.JPG" alt="Template 3">
+      <img src="temp3.jpg" alt="Template 3">
       <h3>Template 3</h3>
       <a href="template3.html" target="_blank" rel="noopener noreferrer">Lihat Template</a>
     </div>
-  </div> <!-- Tutup container di sini -->
+  </div>
 
-  <footer>© 2025 Portal Template Khairul Rijal – Semua Hakcipta Terpelihara</footer>
-
+  <footer>
+    © 2025 Portal Template Khairul Rijal – Semua Hakcipta Terpelihara
+  </footer>
 </body>
 </html>
-
