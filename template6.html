@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proton Elite - Template 6</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V750H9YH5N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V750H9YH5N');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2C3E50;
+            --accent: #E74C3C;
+            --gold: #F39C12;
+            --light: #ECF0F1;
+            --dark: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #fff;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Minimalist Hero */
+        .hero-minimal {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, var(--primary), #34495E);
+            overflow: hidden;
+        }
+        
+        .hero-minimal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 30%, rgba(231,76,60,0.1) 100%);
+        }
+        
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridScroll 20s linear infinite;
+        }
+        
+        @keyframes gridScroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            color: #fff;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .hero-title-minimal {
+            font-size: 72px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+        
+        .hero-title-minimal strong {
+            font-weight: 700;
+            display: block;
+        }
+        
+        .hero-desc {
+            font-size: 20px;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .cta-minimal {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 40px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        
+        .cta-minimal:hover {
+            background: #C0392B;
+            transform: translateX(5px);
+        }
+        
+        .hero-visual {
+            position: relative;
+        }
+        
+        .hero-stats-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .stat-minimal {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-minimal-num {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        
+        .stat-minimal-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+        }
+        
+        /* Elegant Spacing */
+        .spacer {
+            height: 120px;
+        }
+        
+        /* Container */
+        .container-minimal {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Section Header */
+        .section-header-minimal {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+        
+        .section-subtitle {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .section-title-minimal {
+            font-size: 48px;
+            font-weight: 300;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .section-title-minimal strong {
+            font-weight: 700;
+        }
+        
+        .section-text {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Vehicle Cards Elegant */
+        .vehicles-minimal {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .vehicle-minimal {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vehicle-minimal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .vehicle-minimal:hover::before {
+            left: 100%;
+        }
+        
+        .vehicle-minimal:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            transform: translateY(-10px);
+        }
+        
+        .vehicle-img-minimal {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .vehicle-body {
+            padding: 40px 35px;
+        }
+        
+        .vehicle-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--light);
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .vehicle-name-minimal {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .vehicle-subtitle {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 25px;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 25px;
+        }
+        
+        .price-col span {
+            display: block;
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        
+        .price-col strong {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .features-minimal {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .features-minimal li {
+            padding: 12px 0;
+            font-size: 15px;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .features-minimal li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .btn-minimal {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .btn-minimal:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        
+        /* Rebate Elegant */
+        .rebate-elegant {
+            background: var(--light);
+            padding: 100px 40px;
+        }
+        
+        .rebate-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .rebate-card-elegant {
+            background: #fff;
+            padding: 50px 30px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .rebate-card-elegant::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .rebate-card-elegant:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .rebate-card-elegant:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+        
+        .rebate-model-minimal {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .rebate-price-minimal {
+            font-size: 52px;
+            font-weight: 300;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .rebate-label-minimal {
+            font-size: 13px;
+            color: #999;
+        }
+        
+        /* Calculator Elegant */
+        .calculator-elegant {
+            padding: 100px 40px;
+            background: #fff;
+        }
+        
+        .calc-elegant-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 60px;
+        }
+        
+        .calc-form-group {
+            margin-bottom: 35px;
+        }
+        
+        .calc-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .calc-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e0e0e0;
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .calc-btn-minimal {
+            width: 100%;
+            padding: 18px;
+            background: var(--accent);
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .calc-btn-minimal:hover {
+            background: #C0392B;
+        }
+        
+        .calc-result-elegant {
+            margin-top: 40px;
+            padding: 40px;
+            background: var(--light);
+            text-align: center;
+            display: none;
+        }
+        
+        .result-label-minimal {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .result-amount-minimal {
+            font-size: 56px;
+            font-weight: 300;
+            color: var(--primary);
+        }
+        
+        /* Testimonials Grid */
+        .testimonials-elegant {
+            padding: 100px 40px;
+            background: var(--light);
+        }
+        
+        .testimonial-grid-minimal {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-minimal {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-minimal:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        
+        /* Footer Elegant */
+        .footer-elegant {
+            background: var(--primary);
+            color: #fff;
+            padding: 80px 40px 40px;
+        }
+        
+        .footer-grid-minimal {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col-minimal h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        
+        .footer-col-minimal ul {
+            list-style: none;
+        }
+        
+        .footer-col-minimal li {
+            padding: 8px 0;
+            font-size: 15px;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+        
+        .consultant-minimal {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .consultant-img-minimal {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        
+        .consultant-name-minimal {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .consultant-role-minimal {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+            font-size: 14px;
+        }
+        
+        /* Floating Button */
+        .float-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+        
+        .float-btn a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            font-size: 32px;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .float-btn a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37,211,102,0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .vehicles-minimal,
+            .rebate-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid-minimal {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title-minimal {
+                font-size: 42px;
+            }
+            
+            .section-title-minimal {
+                font-size: 32px;
+            }
+            
+            .testimonial-grid-minimal {
+                grid-template-columns: 1fr;
+            }
+            
+            .container-minimal {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero-minimal">
+        <div class="hero-grid"></div>
+        <div class="hero-container">
+            <div class="hero-text">
+                <span class="hero-label">PROTON AUTHORIZED DEALER</span>
+                <h1 class="hero-title-minimal">
+                    <strong>Redefining</strong>
+                    Your Journey
+                </h1>
+                <p class="hero-desc">
+                    Dapatkan rebat sehingga RM10,000 untuk model terpilih. 
+                    Pengalaman membeli yang mudah dengan sokongan profesional.
+                </p>
+                <a href="" class="cta-minimal">
+                    Mulakan Sekarang →
+                </a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-stats-box">
+                    <div class="stat-minimal">
+                        <div class="stat-minimal-num">500+</div>
+                        <div class="stat-minimal-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-minimal">
+                        <div class="stat-minimal-num">RM10K</div>
+                        <div class="stat-minimal-label">Max Rebate</div>
+                    </div>
+                    <div class="stat-minimal">
+                        <div class="stat-minimal-num">95%</div>
+                        <div class="stat-minimal-label">Loan Approval</div>
+                    </div>
+                    <div class="stat-minimal">
+                        <div class="stat-minimal-num">24/7</div>
+                        <div class="stat-minimal-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="spacer"></div>
+    
+    <!-- Vehicles -->
+    <section class="container-minimal">
+        <div class="section-header-minimal">
+            <div class="section-subtitle">KOLEKSI 2025</div>
+            <h2 class="section-title-minimal">Our <strong>Premium Selection</strong></h2>
+            <p class="section-text">
+                Pilihan model terkini dengan teknologi canggih dan reka bentuk moden untuk gaya hidup anda
+            </p>
+        </div>
+        
+        <div class="vehicles-minimal">
+            <!-- X50 -->
+            <div class="vehicle-minimal">
+                <img src="x50-mainbg.jpg" alt="Proton X50" class="vehicle-img-minimal">
+                <div class="vehicle-body">
+                    <span class="vehicle-tag">BEST SELLER</span>
+                    <h3 class="vehicle-name-minimal">PROTON X50</h3>
+                    <p class="vehicle-subtitle">Compact SUV · 1.5L Turbo</p>
+                    
+                    <div class="price-row">
+                        <div class="price-col">
+                            <span>Harga Dari</span>
+                            <strong>RM 92,618</strong>
+                        </div>
+                        <div class="price-col">
+                            <span>Per Bulan</span>
+                            <strong>RM 944</strong>
+                        </div>
+                    </div>
+                    
+                    <ul class="features-minimal">
+                        <li>Rebat RM4K - RM10K</li>
+                        <li>Turbo Engine Performance</li>
+                        <li>Advanced Safety Suite</li>
+                    </ul>
+                    
+                    <button class="btn-minimal">View Details</button>
+                </div>
+            </div>
+            
+            <!-- X70 -->
+            <div class="vehicle-minimal">
+                <img src="x70-mainbg.jpg" alt="Proton X70" class="vehicle-img-minimal">
+                <div class="vehicle-body">
+                    <span class="vehicle-tag">PREMIUM SUV</span>
+                    <h3 class="vehicle-name-minimal">PROTON X70</h3>
+                    <p class="vehicle-subtitle">7-Seater SUV · Premium</p>
+                    
+                    <div class="price-row">
+                        <div class="price-col">
+                            <span>Harga Dari</span>
+                            <strong>RM 101,850</strong>
+                        </div>
+                        <div class="price-col">
+                            <span>Per Bulan</span>
+                            <strong>RM 1,039</strong>
+                        </div>
+                    </div>
+                    
+                    <ul class="features-minimal">
+                        <li>Rebat RM10K Maksimum</li>
+                        <li>Spacious 7-Seater Cabin</li>
+                        <li>Luxury Interior Design</li>
+                    </ul>
+                    
+                    <button class="btn-minimal">View Details</button>
+                </div>
+            </div>
+            
+            <!-- S70 -->
+            <div class="vehicle-minimal">
+                <img src="s70-mainbg.jpg" alt="Proton S70" class="vehicle-img-minimal">
+                <div class="vehicle-body">
+                    <span class="vehicle-tag">LATEST MODEL</span>
+                    <h3 class="vehicle-name-minimal">PROTON S70</h3>
+                    <p class="vehicle-subtitle">Executive Sedan · Smart Tech</p>
+                    
+                    <div class="price-row">
+                        <div class="price-col">
+                            <span>Harga Dari</span>
+                            <strong>RM 76,146</strong>
+                        </div>
+                        <div class="price-col">
+                            <span>Per Bulan</span>
+                            <strong>RM 777</strong>
+                        </div>
+                    </div>
+                    
+                    <ul class="features-minimal">
+                        <li>Rebat RM4K - RM6K</li>
+                        <li>Modern Technology</li>
+                        <li>Executive Comfort</li>
+                    </ul>
+                    
+                    <button class="btn-minimal">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="spacer"></div>
+    
+    <!-- Rebate -->
+    <section class="rebate-elegant">
+        <div class="section-header-minimal">
+            <div class="section-subtitle">SPECIAL OFFERS</div>
+            <h2 class="section-title-minimal"><strong>Exclusive</strong> Rebates</h2>
+            <p class="section-text">Tawaran rebat istimewa untuk model terpilih</p>
+        </div>
+        
+        <div class="rebate-cards">
+            <div class="rebate-card-elegant">
+                <div class="rebate-model-minimal">X50 RC FLAGSHIP</div>
+                <div class="rebate-price-minimal">RM 10K</div>
+                <div class="rebate-label-minimal">Maximum Rebate</div>
+            </div>
+            
+            <div class="rebate-card-elegant">
+                <div class="rebate-model-minimal">X70</div>
+                <div class="rebate-price-minimal">RM 10K</div>
+                <div class="rebate-label-minimal">Maximum Rebate</div>
+            </div>
+            
+            <div class="rebate-card-elegant">
+                <div class="rebate-model-minimal">S70</div>
+                <div class="rebate-price-minimal">RM 4-6K</div>
+                <div class="rebate-label-minimal">By Variant</div>
+            </div>
+            
+            <div class="rebate-card-elegant">
+                <div class="rebate-model-minimal">X50 FL</div>
+                <div class="rebate-price-minimal">RM 4K</div>
+                <div class="rebate-label-minimal">Available Now</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calculator -->
+    <section class="calculator-elegant">
+        <div class="section-header-minimal">
+            <div class="section-subtitle">FINANCING</div>
+            <h2 class="section-title-minimal">Loan <strong>Calculator</strong></h2>
+            <p class="section-text">Kira ansuran bulanan anda dengan mudah</p>
+        </div>
+        
+        <div class="calc-elegant-box">
+            <div class="calc-form-group">
+                <label class="calc-label">Jumlah Pinjaman (RM)</label>
+                <input type="number" id="loanAmount" class="calc-input" placeholder="60000">
+            </div>
+            
+            <div class="calc-form-group">
+                <label class="calc-label">Tempoh (Tahun)</label>
+                <input type="number" id="loanYears" class="calc-input" placeholder="9">
+            </div>
+            
+            <div class="calc-form-group">
+                <label class="calc-label">Kadar Faedah (%)</label>
+                <input type="number" step="0.01" id="interestRate" class="calc-input" placeholder="2.9">
+            </div>
+            
+            <button class="calc-btn-minimal" onclick="calculateLoan()">Calculate Payment</button>
+            
+            <div id="result" class="calc-result-elegant">
+                <div class="result-label-minimal">Monthly Payment</div>
+                <div class="result-amount-minimal" id="monthlyPayment">—</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials-elegant">
+        <div class="section-header-minimal">
+            <div class="section-subtitle">TESTIMONIALS</div>
+            <h2 class="section-title-minimal">Satisfied <strong>Customers</strong></h2>
+        </div>
+        
+        <div class="testimonial-grid-minimal">
+            <img src="test1.jpg" alt="Customer 1" class="testimonial-minimal">
+            <img src="test2.jpg" alt="Customer 2" class="testimonial-minimal">
+            <img src="test3.jpg" alt="Customer 3" class="testimonial-minimal">
+            <img src="test4.jpg" alt="Customer 4" class="testimonial-minimal">
+            <img src="test5.jpg" alt="Customer 5" class="testimonial-minimal">
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer-elegant">
+        <div class="footer-grid-minimal">
+            <div class="footer-col-minimal">
+                <h3>Siapa Layak?</h3>
+                <ul>
+                    <li>✓ Kakitangan Kerajaan</li>
+                    <li>✓ Sektor Swasta</li>
+                    <li>✓ Pekerja Kilang</li>
+                    <li>✓ Pesara</li>
+                    <li>✓ Pelajar & Graduan</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col-minimal">
+                <h3>Dokumen</h3>
+                <ul>
+                    <li>IC & Lesen Memandu</li>
+                    <li>Slip Gaji (3-6 bulan)</li>
+                    <li>Penyata Bank</li>
+                    <li>SSM (Perniagaan)</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col-minimal">
+                <h3>Hubungi</h3>
+                <ul>
+                    <li>WhatsApp: 24/7 Available</li>
+                    <li>Fast Response</li>
+                    <li>Professional Service</li>
+                    <li>Free Consultation</li>
+                </ul>
+            </div>
+            
+            <div class="consultant-minimal">
+                <img src="Pic1.jpg" alt="Consultant" class="consultant-img-minimal">
+                <div class="consultant-name-minimal">[Nama Sellers]</div>
+                <div class="consultant-role-minimal">Proton Sales Consultant</div>
+                <a href="" class="cta-minimal" style="font-size: 14px; padding: 12px 30px;">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 [Nama Sellers] · Proton Authorized Sales Consultant</p>
+            <p style="margin-top: 10px;">Last Updated: 30 September 2025</p>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp -->
+    <div class="float-btn">
+        <a href="">📱</a>
+    </div>
+    
+    <script>
+    function calculateLoan() {
+        const loan = parseFloat(document.getElementById('loanAmount').value);
+        const years = parseFloat(document.getElementById('loanYears').value);
+        const interest = parseFloat(document.getElementById('interestRate').value);
+        
+        if (!loan || !years || !interest) {
+            alert('Sila isi semua medan!');
+            return;
+        }
+        
+        const interestDecimal = interest / 100;
+        const monthlyPayment = (loan * years * interestDecimal + loan) / 108;
+        
+        document.getElementById('monthlyPayment').textContent = 'RM ' + monthlyPayment.toFixed(2);
+        document.getElementById('result').style.display = 'block';
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proton Elite - Template 5</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V750H9YH5N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V750H9YH5N');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            color: #1a202c;
+            overflow-x: hidden;
+        }
+        
+        /* Hero with Parallax */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #fc6076 75%, #ff9a44 100%);
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+            overflow: hidden;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* 3D Floating Elements */
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.6;
+            animation: float3d 20s ease-in-out infinite;
+        }
+        
+        .float-element:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,107,107,0.8) 0%, transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .float-element:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(78,205,196,0.8) 0%, transparent 70%);
+            top: 60%;
+            right: 15%;
+            animation-delay: 5s;
+        }
+        
+        .float-element:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,217,61,0.8) 0%, transparent 70%);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+        
+        @keyframes float3d {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(50px, -50px) scale(1.2);
+            }
+            66% {
+                transform: translate(-50px, 50px) scale(0.9);
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+            padding: 40px 20px;
+        }
+        
+        .logo-3d {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+            animation: rotate3d 10s ease-in-out infinite;
+        }
+        
+        @keyframes rotate3d {
+            0%, 100% { transform: perspective(1000px) rotateY(0deg); }
+            50% { transform: perspective(1000px) rotateY(360deg); }
+        }
+        
+        .hero-title {
+            font-size: 80px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: slideDown 1s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 40px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: slideDown 1s ease-out 0.2s backwards;
+        }
+        
+        .cta-3d {
+            display: inline-block;
+            background: #fff;
+            color: #667eea;
+            padding: 25px 60px;
+            font-size: 22px;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: slideDown 1s ease-out 0.4s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-3d::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .cta-3d:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .cta-3d:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+        
+        /* Stats with Card Style */
+        .stats-section {
+            padding: 80px 20px;
+            background: #fff;
+            position: relative;
+            margin-top: -50px;
+            z-index: 20;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-card-3d {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+        
+        .stat-card-3d:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+        }
+        
+        .stat-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .stat-num {
+            font-size: 52px;
+            font-weight: 900;
+            color: #667eea;
+            line-height: 1;
+        }
+        
+        .stat-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 10px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .section-title-3d {
+            font-size: 56px;
+            font-weight: 900;
+            color: #1a202c;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .section-desc {
+            font-size: 18px;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Vehicle Cards 3D */
+        .vehicles-grid-3d {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+        
+        .vehicle-3d {
+            background: #fff;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        
+        .vehicle-3d:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.15);
+        }
+        
+        .vehicle-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #fc6076 0%, #ff9a44 100%);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 800;
+            font-size: 14px;
+            z-index: 10;
+            box-shadow: 0 8px 20px rgba(252, 96, 118, 0.4);
+        }
+        
+        .vehicle-image-box {
+            height: 300px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .vehicle-image-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+        }
+        
+        .vehicle-img-3d {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .vehicle-3d:hover .vehicle-img-3d {
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        .vehicle-info {
+            padding: 40px 35px;
+        }
+        
+        .vehicle-name-3d {
+            font-size: 36px;
+            font-weight: 900;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+        
+        .vehicle-tagline {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        
+        .price-showcase {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .price-label-3d {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .price-value {
+            font-size: 32px;
+            font-weight: 900;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .monthly-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .monthly-text {
+            font-size: 15px;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        
+        .monthly-amount {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .features-3d {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .features-3d li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .features-3d li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 50%;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        
+        .btn-3d {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Rebate Wave Section */
+        .rebate-wave {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rebate-wave::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23f5f7fa"/></svg>');
+            background-size: cover;
+        }
+        
+        .rebate-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .rebate-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .rebate-title {
+            font-size: 56px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .rebate-subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .rebate-grid-3d {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+        }
+        
+        .rebate-box {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .rebate-box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .rebate-box.featured::after {
+            content: '🔥';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 40px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .rebate-model-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 20px;
+        }
+        
+        .rebate-value {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .rebate-note {
+            color: #718096;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Calculator Premium */
+        .calculator-premium {
+            background: #fff;
+            padding: 100px 20px;
+        }
+        
+        .calc-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .calc-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .calc-title-3d {
+            font-size: 40px;
+            font-weight: 900;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+        
+        .calc-subtitle {
+            color: #718096;
+            font-size: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a202c;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .calc-submit {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            margin-top: 10px;
+        }
+        
+        .calc-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .calc-result-box {
+            margin-top: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .result-title {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .result-price {
+            font-size: 56px;
+            font-weight: 900;
+            color: #fff;
+        }
+        
+        /* Testimonials Modern */
+        .testimonials-modern {
+            background: #f7fafc;
+            padding: 100px 20px;
+        }
+        
+        .testimonial-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+        }
+        
+        .testimonial-card {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+        }
+        
+        /* Footer Modern */
+        .footer-modern {
+            background: #1a202c;
+            color: #fff;
+            padding: 80px 20px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #f093fb;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li {
+            padding: 10px 0;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+        }
+        
+        .consultant-profile {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .consultant-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .consultant-name-3d {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        
+        .consultant-role {
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Floating Action Button */
+        .fab-wa {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            z-index: 1000;
+        }
+        
+        .fab-wa a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border-radius: 50%;
+            font-size: 36px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-fab 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-fab {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+            }
+        }
+        
+        .fab-wa a:hover {
+            transform: scale(1.15) rotate(15deg);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .section-title-3d {
+                font-size: 36px;
+            }
+            
+            .vehicles-grid-3d {
+                grid-template-columns: 1fr;
+            }
+            
+            .calc-wrapper {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="float-element"></div>
+        <div class="float-element"></div>
+        <div class="float-element"></div>
+        
+        <div class="hero-content">
+            <img src="proton.png" alt="Proton" class="logo-3d">
+            <h1 class="hero-title">REVOLUSI AUTOMOTIVE</h1>
+            <p class="hero-subtitle">🎉 REBAT MEGA HINGGA RM10,000 • READY STOCK SEKARANG!</p>
+            <a href="" class="cta-3d">DAPATKAN TAWARAN TERBAIK</a>
+        </div>
+    </section>
+    
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card-3d">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-num">500+</div>
+                <div class="stat-text">Pembeli Berpuas Hati</div>
+            </div>
+            <div class="stat-card-3d">
+                <div class="stat-icon">💰</div>
+                <div class="stat-num">RM10K</div>
+                <div class="stat-text">Rebat Maksimum</div>
+            </div>
+            <div class="stat-card-3d">
+                <div class="stat-icon">✅</div>
+                <div class="stat-num">95%</div>
+                <div class="stat-text">Kelulusan Loan</div>
+            </div>
+            <div class="stat-card-3d">
+                <div class="stat-icon">🚀</div>
+                <div class="stat-num">24/7</div>
+                <div class="stat-text">Sokongan Pantas</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vehicles -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">✨ KOLEKSI TERKINI</span>
+            <h2 class="section-title-3d">Model Premium 2025</h2>
+            <p class="section-desc">Pilihan kereta terbaik dengan teknologi terkini dan rebat menarik untuk anda</p>
+        </div>
+        
+        <div class="vehicles-grid-3d">
+            <!-- X50 -->
+            <div class="vehicle-3d">
+                <span class="vehicle-badge">🔥 PALING LARIS</span>
+                <div class="vehicle-image-box">
+                    <img src="x50-mainbg.jpg" alt="Proton X50" class="vehicle-img-3d">
+                </div>
+                <div class="vehicle-info">
+                    <h3 class="vehicle-name-3d">PROTON X50</h3>
+                    <p class="vehicle-tagline">Compact SUV • Turbo Power</p>
+                    
+                    <div class="price-showcase">
+                        <div class="price-label-3d">Harga Bermula Dari</div>
+                        <div class="price-value">RM 92,618</div>
+                    </div>
+                    
+                    <div class="monthly-display">
+                        <span class="monthly-text">Ansuran Bulanan</span>
+                        <span class="monthly-amount">RM 944</span>
+                    </div>
+                    
+                    <ul class="features-3d">
+                        <li>Rebat RM4K - RM10K</li>
+                        <li>1.5L Turbo Engine</li>
+                        <li>Advanced Safety Features</li>
+                        <li>Panoramic Sunroof</li>
+                    </ul>
+                    
+                    <button class="btn-3d">LIHAT DETAILS</button>
+                </div>
+            </div>
+            
+            <!-- X70 -->
+            <div class="vehicle-3d">
+                <span class="vehicle-badge">⭐ PREMIUM CHOICE</span>
+                <div class="vehicle-image-box">
+                    <img src="x70-mainbg.jpg" alt="Proton X70" class="vehicle-img-3d">
+                </div>
+                <div class="vehicle-info">
+                    <h3 class="vehicle-name-3d">PROTON X70</h3>
+                    <p class="vehicle-tagline">7-Seater SUV • Luxury Class</p>
+                    
+                    <div class="price-showcase">
+                        <div class="price-label-3d">Harga Bermula Dari</div>
+                        <div class="price-value">RM 101,850</div>
+                    </div>
+                    
+                    <div class="monthly-display">
+                        <span class="monthly-text">Ansuran Bulanan</span>
+                        <span class="monthly-amount">RM 1,039</span>
+                    </div>
+                    
+                    <ul class="features-3d">
+                        <li>Rebat RM10K Maksimum!</li>
+                        <li>Spacious 7-Seater</li>
+                        <li>Premium Interior</li>
+                        <li>Smart Infotainment</li>
+                    </ul>
+                    
+                    <button class="btn-3d">LIHAT DETAILS</button>
+                </div>
+            </div>
+            
+            <!-- S70 -->
+            <div class="vehicle-3d">
+                <span class="vehicle-badge">✨ TERBAHARU</span>
+                <div class="vehicle-image-box">
+                    <img src="s70-mainbg.jpg" alt="Proton S70" class="vehicle-img-3d">
+                </div>
+                <div class="vehicle-info">
+                    <h3 class="vehicle-name-3d">PROTON S70</h3>
+                    <p class="vehicle-tagline">Executive Sedan • Smart Tech</p>
+                    
+                    <div class="price-showcase">
+                        <div class="price-label-3d">Harga Bermula Dari</div>
+                        <div class="price-value">RM 76,146</div>
+                    </div>
+                    
+                    <div class="monthly-display">
+                        <span class="monthly-text">Ansuran Bulanan</span>
+                        <span class="monthly-amount">RM 777</span>
+                    </div>
+                    
+                    <ul class="features-3d">
+                        <li>Rebat RM4K - RM6K</li>
+                        <li>Modern Design</li>
+                        <li>Latest Technology</li>
+                        <li>Comfort & Spacious</li>
+                    </ul>
+                    
+                    <button class="btn-3d">LIHAT DETAILS</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Rebate -->
+    <section class="rebate-wave">
+        <div class="rebate-container">
+            <div class="rebate-header">
+                <h2 class="rebate-title">REBAT GILA-GILA!</h2>
+                <p class="rebate-subtitle">Dapatkan rebat maksimum untuk model pilihan anda</p>
+            </div>
+            
+            <div class="rebate-grid-3d">
+                <div class="rebate-box featured">
+                    <div class="rebate-model-name">X50 RC FLAGSHIP</div>
+                    <div class="rebate-value">RM 10K</div>
+                    <div class="rebate-note">Rebat Maksimum!</div>
+                </div>
+                
+                <div class="rebate-box featured">
+                    <div class="rebate-model-name">X70</div>
+                    <div class="rebate-value">RM 10K</div>
+                    <div class="rebate-note">Rebat Maksimum!</div>
+                </div>
+                
+                <div class="rebate-box">
+                    <div class="rebate-model-name">S70</div>
+                    <div class="rebate-value">RM 4-6K</div>
+                    <div class="rebate-note">Bergantung Varian</div>
+                </div>
+                
+                <div class="rebate-box">
+                    <div class="rebate-model-name">X50 FL</div>
+                    <div class="rebate-value">RM 4K</div>
+                    <div class="rebate-note">Tersedia Sekarang!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calculator -->
+    <section class="calculator-premium">
+        <div class="calc-wrapper">
+            <div class="calc-header">
+                <h3 class="calc-title-3d">Kalkulator Pinjaman</h3>
+                <p class="calc-subtitle">Kira ansuran bulanan anda dengan mudah</p>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Jumlah Pinjaman (RM)</label>
+                <input type="number" id="loanAmount" class="form-input" placeholder="Contoh: 60000">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Tempoh Pinjaman (Tahun)</label>
+                <input type="number" id="loanYears" class="form-input" placeholder="Contoh: 9">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Kadar Faedah (%)</label>
+                <input type="number" step="0.01" id="interestRate" class="form-input" placeholder="Contoh: 2.9">
+            </div>
+            
+            <button class="calc-submit" onclick="calculateLoan()">KIRA SEKARANG</button>
+            
+            <div id="result" class="calc-result-box">
+                <div class="result-title">Ansuran Bulanan Anda</div>
+                <div class="result-price" id="monthlyPayment">-</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials-modern">
+        <div class="section-header">
+            <span class="section-tag">💬 TESTIMONI</span>
+            <h2 class="section-title-3d">Pelanggan Kami Berpuas Hati</h2>
+            <p class="section-desc">Ribuan pelanggan telah mempercayai kami untuk perjalanan mereka</p>
+        </div>
+        
+        <div class="testimonial-images">
+            <img src="test1.jpg" alt="Customer 1" class="testimonial-card">
+            <img src="test2.jpg" alt="Customer 2" class="testimonial-card">
+            <img src="test3.jpg" alt="Customer 3" class="testimonial-card">
+            <img src="test4.jpg" alt="Customer 4" class="testimonial-card">
+            <img src="test5.jpg" alt="Customer 5" class="testimonial-card">
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Siapa Layak Mohon?</h3>
+                <ul>
+                    <li>✓ Kakitangan Kerajaan</li>
+                    <li>✓ Sektor Swasta</li>
+                    <li>✓ Pekerja Kilang</li>
+                    <li>✓ Pesara</li>
+                    <li>✓ Pelajar</li>
+                    <li>✓ Graduate Scheme</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Dokumen Diperlukan</h3>
+                <ul>
+                    <li>📄 Salinan IC & Lesen</li>
+                    <li>💵 Slip Gaji (3-6 bulan)</li>
+                    <li>🏦 Penyata Bank</li>
+                    <li>🏢 SSM (Untuk Perniagaan)</li>
+                </ul>
+            </div>
+            
+            <div class="consultant-profile">
+                <img src="Pic1.jpg" alt="Consultant" class="consultant-avatar">
+                <div class="consultant-name-3d">[Nama Sellers]</div>
+                <div class="consultant-role">Proton Sales Consultant</div>
+                <a href="" class="cta-3d" style="font-size: 16px; padding: 15px 35px;">
+                    HUBUNGI SAYA
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 [Nama Sellers] | Proton Authorized Sales Consultant</p>
+            <p style="margin-top: 10px;">Dikemaskini: 30 September 2025</p>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp -->
+    <div class="fab-wa">
+        <a href="">📱</a>
+    </div>
+    
+    <script>
+    function calculateLoan() {
+        const loan = parseFloat(document.getElementById('loanAmount').value);
+        const years = parseFloat(document.getElementById('loanYears').value);
+        const interest = parseFloat(document.getElementById('interestRate').value);
+        
+        if (!loan || !years || !interest) {
+            alert('Sila isi semua medan!');
+            return;
+        }
+        
+        const interestDecimal = interest / 100;
+        const monthlyPayment = (loan * years * interestDecimal + loan) / 108;
+        
+        document.getElementById('monthlyPayment').textContent = 'RM ' + monthlyPayment.toFixed(2);
+        document.getElementById('result').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
